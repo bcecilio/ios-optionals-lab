@@ -87,7 +87,7 @@ var userOneAge: Int? = 15
 var userOneHeight: Double? = 70
 
 if let name = userOneName, let age = userOneAge, let height = userOneHeight {
-let inchesToFeet = height * .0833333333
+let inchesToFeet = let inchesToFeet = String(format: "%.1f", height / 12)
 print("Hello \(name)! You are \(age) years old and \(inchesToFeet) feet tall.")
 }
 ```
@@ -106,8 +106,8 @@ var userTwoAge: Int? = 15
 var userTwoHeight: Double? = nil
 
 if let name = userTwoName, let age = userTwoAge, let height = userTwoHeight {
-let inchesToFeet = height * .0833333333
-print("Hello \(name)! You are \(age) years old and \(inchesToFeet) feet tall.")
+    
+}
 ```
 
 ## Question 4
@@ -119,7 +119,15 @@ Give the variable `favoriteNumber`, write code that either prints "Your favorite
 ```swift
 var favoriteNumber = Bool.random() ? Int.random(in: 0...10) : nil
 ```
+Answer
+```
+var favoriteNumber = Bool.random() ? Int.random(in: 0...10) : nil
 
+if favoriteNumber == nil{
+print("I don't know your favorite number.")
+} else {print("Your favorite number is \(String(describing: favoriteNumber))")
+}
+```
 
 
 ## Question 5
@@ -130,6 +138,14 @@ Given the variables `numOne`, `numTwo` and `numThree`, write code that prints "T
 var numOne = Bool.random() ? Int.random(in: 0...10) : nil
 var numTwo = Bool.random() ? Int.random(in: 0...10) : nil
 var numThree = Bool.random() ? Int.random(in: 0...10) : nil
+```
+Answer
+```
+var numOne = Bool.random() ? Int.random(in: 0...10) : nil
+var numTwo = Bool.random() ? Int.random(in: 0...10) : nil
+var numThree = Bool.random() ? Int.random(in: 0...10) : nil
+
+if let 
 ```
 
 ## Question 6
@@ -142,6 +158,20 @@ var numbers = [Int?]()
 for _ in 0..<10 {
     numbers.append(Bool.random() ? Int.random(in: 0...100) : nil)
 }
+```
+Answer
+```
+var numbers = [Int?]()
+
+var sum = 0
+var sumWithNil = 0
+for nums in 0..<10 {
+    numbers.append(Bool.random() ? Int.random(in: 0...100) : nil)
+    if let validNum = currentNum {
+    sum += validNum
+}
+}
+print("The sums of all the numbers is \(sum)")
 ```
 
 b. Using the same variable, find the average of all non-nil values.
