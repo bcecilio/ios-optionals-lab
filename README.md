@@ -169,19 +169,32 @@ for _ in 0..<10 {
 Answer
 ```
 var numbers = [Int?]()
+for _ in 0..<10 {
+    numbers.append(Bool.random() ? Int.random(in: 0...100) : nil)
+}
 
 var sum = 0
-var sumWithNil = 0
-for nums in 0..<10 {
-    numbers.append(Bool.random() ? Int.random(in: 0...100) : nil)
-    if let validNum = currentNum {
-    sum += validNum
+for num in numbers {
+    sum += (num ?? 0) // nil-coalescing to unwrap num
 }
-}
-print("The sums of all the numbers is \(sum)")
+print("The sum of all the numbers is \(sum)")
 ```
 
 b. Using the same variable, find the average of all non-nil values.
+Answer
+```
+sum = 0
+var nonNilValueCount = 0
+for num in numbers {
+    // optional binding to unwrap num
+    if let unwrapNum = num {
+        // valid integer here, increment nonNilValueCount by 1
+        nonNilValueCount += 1
+        sum += unwrapNum
+    }
+}
+print("The average of the \(nonNilValueCount) non-nil values is \(sum / nonNilValueCount)")
+```
 
 ## Extra Questions
 
