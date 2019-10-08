@@ -145,7 +145,14 @@ var numOne = Bool.random() ? Int.random(in: 0...10) : nil
 var numTwo = Bool.random() ? Int.random(in: 0...10) : nil
 var numThree = Bool.random() ? Int.random(in: 0...10) : nil
 
-if let 
+var numbers = [numOne, numTwo, numThree]
+var sum = 0
+for num in numbers {
+   if let validNumber = num {
+       sum += validNumber
+   }
+}
+print("The sum of our variables is \(sum)")
 ```
 
 ## Question 6
